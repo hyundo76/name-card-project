@@ -51,9 +51,9 @@ while True:
         if choice == "1":
             business_card[index][0] = input("새로운 이름: ").strip()
         elif choice == "2":
-            business_card[index][2] = input("새로운 전화번호: ").strip()
+            business_card[index][1] = input("새로운 전화번호: ").strip()
         elif choice == "3":
-            business_card[index][1] = input("새로운 소속: ").strip()
+            business_card[index][2] = input("새로운 소속: ").strip()
         else:
             print("잘못된 입력입니다.")
             continue

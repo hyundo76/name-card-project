@@ -29,7 +29,7 @@ while True:
         business_card.append(card)
 
     elif menu == '2':
-        print('/n 명함수정')
+        print('명함수정')
         name = input("수정할 명함의 이름을 입력하세요: ").strip()
 
         index = -1
@@ -74,10 +74,10 @@ while True:
                     index = i
                     print(f"'{remove_name}'님의 명함을 삭제하시겠습니까? ")
                     answer = input("예 / 아니요 ").strip()
+                    check = 1
                     if answer == '예' :
                         del business_card[index]
                         print(f"'{remove_name}'님의 명함이 삭제되었습니다.")
-                        check = 1
                     else :
                         print("삭제를 취소합니다.")
                     break

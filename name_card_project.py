@@ -35,7 +35,7 @@ while True:
     elif menu == '4':
         print('명함목록보기')
 
-        if len(buisness_card) == 0:
+        if len(business_card) == 0:
             print("저장된 명함이 없습니다.")
         else:
             for i in range(len(business_card)):

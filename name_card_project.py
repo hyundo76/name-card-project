@@ -9,16 +9,25 @@ display = '''
 -------------------------------------------------------------
 메뉴를 선택하세요 >>> '''
 
+business_card = []
+
 menu = ''
-<<<<<<< HEAD
-
-
-
-=======
 while True:
     menu = input(display)
     if menu == '1':
         print('명함입력')
+        name = (input("이름을 입력하세요 :"))
+
+        phone = (input("전화번호를 입력하세요 :"))
+
+        belong = (input("소속을 입력하세요 :"))
+
+        print("입력이 완료 되었습니다")
+
+        card = [(name),(phone),(belong),]
+
+        business_card.append(card)
+
     elif menu == '2':
         print('명함수정')
     elif menu == '3':
@@ -30,4 +39,3 @@ while True:
         sys.exit()
     else:
         print('메뉴선택을 잘못하셨습니다.')
->>>>>>> 54766729dd2a044ca2d04cf8e943b631eaf72a6a

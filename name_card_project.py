@@ -32,10 +32,27 @@ while True:
         print('명함수정')
     elif menu == '3':
         print('명함삭제')
+        if not business_card :
+            print("삭제할 명함이 없습니다.")
+        else :
+             remove_name = input('삭제할 명함 이름을 입력하시오')
+             
+             for i in range(len(business_card)) :
+                if business_card[i][0] == remove_name :
+                    index = i
+                    print(f"'{remove_name}'님의 명함을 삭제하시겠습니까? ")
+                    answer = input("예 / 아니요 ")
+                    if answer == '예' :
+                        del business_card[index]
+                        print(f"'{remove_name}'님의 명함이 삭제되었습니다.")
+                    else :
+                        print("삭제를 취소합니다.")
+                break
+             print("해당 이름의 명함을 찾을 수 없습니다.")
     elif menu == '4':
         print('명함목록보기')
 
-        if len(buisness_card) == 0:
+        if len(business_card) == 0:
             print("저장된 명함이 없습니다.")
         else:
             for i in range(len(business_card)):

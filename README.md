@@ -59,9 +59,9 @@ input를 통해 인적사항 변수를 받는다.
 
 # 변수명 설정
 """
-business_card = 명함 전체 리스트
-name = 이름
-belong = 소속
-phone = 전화번호
-card = 개인정보 명함 리스트
+business_card = 명함 전체 리스트  
+name = 이름  
+belong = 소속  
+phone = 전화번호  
+card = 개인정보 명함 리스트  
 """

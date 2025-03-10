@@ -10,6 +10,11 @@ display = '''
 메뉴를 선택하세요 >>> '''
 
 menu = ''
+<<<<<<< HEAD
+
+
+
+=======
 while True:
     menu = input(display)
     if menu == '1':
@@ -33,3 +38,4 @@ while True:
         sys.exit()
     else:
         print('메뉴선택을 잘못하셨습니다.')
+>>>>>>> 54766729dd2a044ca2d04cf8e943b631eaf72a6a

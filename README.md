@@ -19,3 +19,5 @@ name card project
 
 
 ## 명함목록보기
+
+반복문 돌려서 출력

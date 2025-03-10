@@ -88,7 +88,7 @@ while True:
         else:
             for i in range(len(business_card)):
                 card = business_card[i]
-                print(f"{i+1} | 이름 : {card[0]} | 소속 : {card[1]} | 전화번호 : {card[2]}")
+                print(f"{i+1} | 이름 : {card[0]} | 전화번호 : {card[1]} | 소속 : {card[2]}")
 
     elif menu == '5':
         print('프로그램 종료')

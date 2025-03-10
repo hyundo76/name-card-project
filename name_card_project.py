@@ -9,7 +9,7 @@ display = '''
 -------------------------------------------------------------
 메뉴를 선택하세요 >>> '''
 
-business_card = []
+business_card = [['asd','asdf','asd'], ['zxc', 'zxc', 'zxc'] ,['qwe','qwe','qwe']]
 
 menu = ''
 while True:
@@ -68,6 +68,7 @@ while True:
         else :
              remove_name = input('삭제할 명함 이름을 입력하시오').strip()
              
+             check = 0
              for i in range(len(business_card)) :
                 if business_card[i][0] == remove_name :
                     index = i
@@ -76,10 +77,12 @@ while True:
                     if answer == '예' :
                         del business_card[index]
                         print(f"'{remove_name}'님의 명함이 삭제되었습니다.")
+                        check = 1
                     else :
                         print("삭제를 취소합니다.")
-                break
-             print("해당 이름의 명함을 찾을 수 없습니다.")
+                    break
+             if check == 0:
+                print("해당 이름의 명함을 찾을 수 없습니다.")
     elif menu == '4':
         print('명함목록보기')
 

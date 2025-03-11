@@ -6,24 +6,38 @@ display = '''
 -------------------------------------------------------------
 메뉴를 선택하세요 >>> '''
 
-business_card = [['asd','asdf','asd'], ['zxc', 'zxc', 'zxc'] ,['qwe','qwe','qwe']]
+business_card = [
+    ['홍길동', '010-1234-5678', '삼성전자'],
+    ['김영희', '010-2345-6789', 'LG화학'],
+    ['이철수', '010-3456-7890', '카카오']
+]
 
 menu = ''
 while True:
     menu = input(display)
     if menu == '1':
         print('명함입력')
-        name = (input("이름을 입력하세요 :").strip())
 
+        while True:
+            name = (input("이름을 입력하세요 :").strip())
+            check = False
+            for i, card in enumerate(business_card):
+                if card[0] == name:
+                    check = True
+                    print("중복된 이름입니다.")
+                    break
+                
+            if not check:
+                print("중복되지 않은 이름입니다.")
+                break
+                    
         phone = (input("전화번호를 입력하세요 :").strip())
-
         belong = (input("소속을 입력하세요 :").strip())
 
-        print("입력이 완료 되었습니다")
 
-        card = [(name),(phone),(belong),]
-
+        card = [name, phone, belong]
         business_card.append(card)
+        print("입력이 완료되었습니다.")
 
     elif menu == '2':
         print('명함수정')
@@ -35,15 +49,15 @@ while True:
                 while True:   
                     choice = int(input('수정할 값을 선택하세요>>> 1. 이름 2. 전화번호 3. 소속'))
                     if choice in (1,2,3):
-                        card[choice - 1] = input('수정할 값: ')
+                        card[choice - 1] = input('수정할 값: ').strip()
+                        print("수정이 완료되었습니다.")
                         check = 1
                         break
+                    else: 
+                        print("경고: 1, 2, 3 중 하나를 선택하세요")
         if check == 0:
-            print('데이터가 없습니다')       
+            print('해당 이름의 명함이 없습니다.')       
                         
-
-
-
     elif menu == '3':
         print('명함삭제')
         if not business_card :
@@ -68,16 +82,14 @@ while True:
                 print("해당 이름의 명함을 찾을 수 없습니다.")
     elif menu == '4':
         print('명함목록보기')
-
-        if len(business_card) == 0:
+        if not business_card:
             print("저장된 명함이 없습니다.")
         else:
-            for i in range(len(business_card)):
-                card = business_card[i]
-                print(f"{i+1} | 이름 : {card[0]} | 전화번호 : {card[1]} | 소속 : {card[2]}")
+            for i, card in enumerate(business_card, start=1):
+                print(f"{i} | 이름 : {card[0]} | 전화번호 : {card[1]} | 소속 : {card[2]}")
 
     elif menu == '5':
         print('프로그램 종료')
         sys.exit()
     else:
-        print('메뉴선택을 잘못하셨습니다.')
+        print('메뉴선택을 잘못하셨습니다. 1 ~ 5 중 선택하세요.')
